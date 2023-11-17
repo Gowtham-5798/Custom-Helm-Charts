@@ -1,0 +1,28 @@
+provider "helm" {
+  kubernetes {
+    config_path = "C:\\Users\\gowth\\.kube\\config"
+  }
+}
+
+resource "helm_release" "example" {
+  name      = "example-release"
+  chart     = "C:\\Users\\gowth\\Downloads\\Helm-Chart\\Charts"  # Adjust the path to your Helm chart
+  namespace = "default"  # Replace with the desired namespace
+
+  values = [
+    # Additional values to pass to the Helm chart
+    # Example:
+    # "{ key1 = value1, key2 = value2 }"
+  ]
+
+  # Set any additional options as needed
+  # For example, disable Helm's CRD hook
+  set {
+    name  = "crd-install"
+    value = "false"
+  }
+
+  depends_on = [
+    # Add any dependencies if needed
+  ]
+}
