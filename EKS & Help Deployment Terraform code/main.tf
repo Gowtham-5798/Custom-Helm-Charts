@@ -19,9 +19,9 @@ module "eks" {
     }
   }
 
-  vpc_id                   = "vpc-049f49de0755aecc9"
-  subnet_ids               = ["subnet-07a59bddddd3f9462", "subnet-001198ebb932c52ef", "subnet-0f3272c7ab61da983"]
-  control_plane_subnet_ids = ["subnet-07a59bddddd3f9462", "subnet-001198ebb932c52ef", "subnet-0f3272c7ab61da983"]
+  vpc_id                   = "vpc-xxxxxxxxxxx"
+  subnet_ids               = ["subnet-xxxxxxxxxxxxx", "subnet-xxxxxxxxxxxxxxxx", "subnet-xxxxxxxxxxxxxxx"]
+  control_plane_subnet_ids = ["subnet-xxxxxxxxxxxxx", "subnet-xxxxxxxxxxxxxxxx", "subnet-xxxxxxxxxxxxxxx"]
 
 
   # EKS Managed Node Group(s)
@@ -41,9 +41,9 @@ module "eks" {
   }
 }
 
-resource "helm_release" "stovl" {
+resource "helm_release" "helm" {
   name      = "my-release"
-  chart     = "C:\\Users\\gowth\\Downloads\\Helm-Chart\\Charts"
+  chart     = "C:\\Users\\user\\Downloads\\Helm-Chart\\Charts"
   namespace = "default"
 }
 
